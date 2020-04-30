@@ -19,6 +19,16 @@ class Snacks
             {   // Store the array in our property.
                 $this->allSnacks = $jsonObject->snacks;
             }
+            // If snacks are NOT an array.
+            else 
+            {
+                echo '<p>WARNING: The snacks appear to be malformed!<p>';
+            }
+        }
+        // If file doesn't exist.
+        else 
+        {
+            echo '<p>WARNING: Your file doesn\t exist!</p>';
         }      
     }
 
@@ -36,6 +46,33 @@ class Snacks
                 echo '<li>'. $newSnack->output( FALSE ).'</li>';
             }   // Close the unordered list.
             echo '</ul>';
+        }
+    }
+
+    // Find a particular snack.
+    public function findSnackByIndex( $id = FALSE )
+    { // Check if the submisson is a number(integar).
+        if ( is_integer( $id ) )
+        { // Check if the snack at the INDEX even EXISTS!
+            if( isset( $this->allSnacks[$id] ) )
+            {   // Retrieve that snack from the array!
+                $foundSnack = new Snack(
+                    $this->allSnacks[$id]->name,
+                    $this->allSnacks[$id]->price,
+                    $this->allSnacks[$id]->type
+                );
+                // Output that snack!
+                $foundSnack->output();
+            }
+            else 
+            {
+                echo '<p>Sorry, we couldn\'t find a snack at ID:'.$id.'!</p>';
+            }
+        }
+        // No ID, or an invalid ID was passed.
+        else
+        {
+            echo '<p>No ID, or an invalid ID was passed; unable to find snack for ID '.$id.'</p>';
         }
     }
 }
