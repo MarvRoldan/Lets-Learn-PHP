@@ -18,8 +18,8 @@ if (isset($_POST) && !empty($_POST)) // Making sure SOMETHING was submitted.
     $submittedUsername = $_POST['username'];
     $submittedPassword = $_POST['password'];
     // Expected username and password (hardcoded.)
-    $username = 'warren';
-    $password = 'mypass';
+    $username = 'user';
+    $password = 'password';
     // Successful login...
     if (($username === $submittedUsername) && ($password === $submittedPassword)) {
         $message = 'Hello, ' . $username . ', thank you for logging in!';
