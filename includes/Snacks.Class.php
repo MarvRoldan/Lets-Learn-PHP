@@ -64,14 +64,15 @@ class Snacks
                 // Output that snack!
                 $foundSnack->output();
             }
+             // If the Snack is not found...
             else 
-            {
+            {   // Output a warning for the user.
                 echo '<p>Sorry, we couldn\'t find a snack at ID:'.$id.'!</p>';
             }
         }
         // No ID, or an invalid ID was passed.
         else
-        {
+        {   // Ouput a warning for the user.
             echo '<p>No ID, or an invalid ID was passed; unable to find snack for ID '.$id.'</p>';
         }
     }
