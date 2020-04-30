@@ -16,6 +16,7 @@
     $myAssociativeArray = array (
         'name' => 'Bob',
         'age' => 36,
+        // An array in an array makke this MULTIDIMENSIONAL.
         'interests' => array ( // Notice, this is an INDEXED array INSIDE our ASSOCIATIVE ARRAY.
             'PHP',
             'JavaScript',
@@ -30,7 +31,6 @@
     $secondInterest = $myAssociativeArray['interest'][1];
     // Add a new interest.
     $myAssociativeArray['interests'][] = 'HTML';
-
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,5 +40,33 @@
 </head>
 <body>
     <h1>PHP Arrays</h1>
+    <?php include './includes/navigation.php'; ?>
+    <h2>Indexed Array</h2>
+    <ul>
+        <?php foreach ( $myIndexedArray as $animal ) : // This will loop over the array ?>
+            <li>
+                <?php echo( $animal ); ?>
+            </li>
+        <?php endforeach; ?>
+    </ul>
+    <h2>Associative Array</h2>
+    <dl>
+        <?php foreach ( $myAssociativeArray as $key => $value ) : // We can call yup KEY AND VALUE at once in our loop! Note the fat arrow syntax. ?>
+            <dt><?php echo ( $key ); // This array element's Key ?></dt>
+            <dd>
+                <?php 
+                    // Checking if this is the interest (or another) array.
+                    if ( is_array( $value ) )
+                    { // Output each element in the array.
+                        foreach( $value as $element ) echo $element . ', ';
+                    }
+                    else 
+                    { // Display the string / inteher value, otherwise.
+                        echo ( $value ); // This array element's Value. 
+                    }
+                ?>
+            </dd>
+        <?php endforeach; // Ends our foreach ?>
+    </dl>
 </body>
 </html>
