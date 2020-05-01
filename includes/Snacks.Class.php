@@ -8,7 +8,7 @@ class Snacks
     //Methods.
 
     function __construct( $jsonFilePath = '' )
-    {   // Checkk if the file exists.
+    {   // Check if the file exists.
         if ( file_exists( $jsonFilePath ) )
         {   // Will retrieve the file contents as a string.
             $jsonString = file_get_contents( $jsonFilePath );
