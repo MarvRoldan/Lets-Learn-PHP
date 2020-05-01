@@ -19,6 +19,17 @@
         <li>
             <a href="/api-request-test.php">API Request Test (JS + Endpoint)</a>
         </li>
+        <li>
+            <a href="/api-external-php-test.php">API Request Test (PHP + Endpoint)</a>
+        </li>
+        <li>
+            <a href="./phpinfo.php">
+                PHP Info
+                <strong style="color: red;">
+                NEVER DO THIS IN A REAL WEBSITE
+                </strong>
+            </a>
+        </li>
     </ul>
 </nav>
 <?php // By default, anything written in a PHP file will be sent to the browser (or whatever client made the request.)

@@ -11,10 +11,9 @@
     <script type="text/javascript" src="/js/scripts.js" defer></script>
 </head>
 <body>
-    <h1><? echo $pageName; ?></h1>
+    <h1><?php echo $pageName; ?></h1>
     <?php include './includes/navigation.php'; ?>
     <section id="api-test">
-
     </section>
 </body>
 </html>
