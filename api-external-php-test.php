@@ -1,10 +1,14 @@
 <?php
+/*ini_set( 'display_errors', 1 );
+ini_set( 'display_startup_errors', 1 );
+error_reporting( E_ALL );*/
+
 // Submit a request to the API endpoint.
-$randomUserJSONString = file_get_contents('http://randomuser.me/api/');
+$randomUserJSONString = file_get_contents('http://randomuser.me/api');
 // Convert the response to a PHP object.
 $randomUserObject = json_decode($randomUserJSONString);
 // Collect the first user in the results array.
-$randomUser = $randomUserObject->results[1];
+$randomUser = $randomUserObject->results[0];
 
 ?><!DOCTYPE html>
 <html lang="en">
